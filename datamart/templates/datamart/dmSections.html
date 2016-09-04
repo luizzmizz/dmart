@@ -1,0 +1,9 @@
+{% if dmSections %}
+    <ul>
+    {% for dmSection in dmSections %}
+        <li><a href="/datamart/{{ dmSection.name }}">{{ dmSection.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No sections are available.</p>
+{% endif %}

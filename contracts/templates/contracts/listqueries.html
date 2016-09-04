@@ -1,0 +1,9 @@
+{% if queries %}
+    <ul>
+    {% for q in queries %}
+        <li><a href="/datamart/contracts/{{ q.view }}">{{ q.name }}={{ q.desc}} </a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No queries are available.</p>
+{% endif %}
