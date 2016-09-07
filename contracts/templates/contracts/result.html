@@ -1,0 +1,6 @@
+{% load render_table from django_tables2%}
+ <link rel="stylesheet" href="{{ STATIC_URL }}/django_tables2/themes/paleblue/css/screen.css" />
+
+            {% if result%}
+        {%render_table result%}
+            {%endif%}

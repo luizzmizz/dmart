@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'contracts',
     'datamart',
+    'django_tables2',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -82,15 +83,6 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     },
-    'testov': {
-        'ENGINE': 'django.db.backends.oracle',
-        'NAME': 'openview',
-        'USER': 'test',
-        'PASSWORD': 'test',
-        'HOST': '',
-        'PORT': '',
-        'OPTIONS': { 'threaded': True , },
-    },
     'nexus': {
         'ENGINE': 'django.db.backends.oracle',
         'NAME' : 'nexus',
@@ -119,7 +111,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-
+DATE_FORMAT = '%Y-%m-%d'
+DATE_TIME_FORMAT = '%Y-%m-%d'
 
 
 #LDAP AUTHENTICATION
@@ -160,6 +153,6 @@ AUTH_LDAP_USER_FLAGS_BY_GROUP = {
 AUTH_LDAP_FIND_GROUP_PERMS = True
 
 # The backends needed to make this work.
-#AUTHENTICATION_BACKENDS = (
-#    'django_auth_ldap.backend.LDAPBackend',
-#    'django.contrib.auth.backends.ModelBackend')
+AUTHENTICATION_BACKENDS = (
+    'django_auth_ldap.backend.LDAPBackend',
+    'django.contrib.auth.backends.ModelBackend')

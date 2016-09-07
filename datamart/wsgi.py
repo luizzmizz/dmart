@@ -12,5 +12,5 @@ import os
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "datamart.settings")
-
+os.environ.setdefault("TNS_ADMIN", "/opt/instantclient_12_1")
 application = get_wsgi_application()
